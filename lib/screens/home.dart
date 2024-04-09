@@ -1,13 +1,10 @@
-import "dart:ffi";
-import "dart:ui";
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:project_1/model/todo.dart';
 import '../constants/colors.dart';
 import '../widgets/todo_item.dart';
 
 class Home extends StatefulWidget{
-   Home({Key? key}) : super(key: key);
+   Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();
@@ -90,13 +87,12 @@ class _HomeState extends State<Home> {
                   bottom: 20,
                   right: 20,
                 ),
-                child: ElevatedButton(child: Text('+', style: TextStyle(fontSize: 40,),),
-                onPressed: () {},
+                child: ElevatedButton(onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: tdBlue,
-                //  minimumSize: Size(60,60),
+                  minimumSize: Size(60,60),
                   elevation: 10,
-                ),),
+                ),child: Text('+', style: TextStyle(fontSize: 40,),),),
               )              
               ]),
           )
@@ -147,7 +143,7 @@ void _deleteToDoItem(String id){
       backgroundColor: tdGColor,
       elevation: 0,
       title: Row(mainAxisAlignment:MainAxisAlignment.spaceBetween ,children: [Icon(Icons.menu,color: tdBlack,size:30 
-      ,),Container(
+      ,),SizedBox(
         height: 40,
         width: 40,
         child: ClipRRect(
